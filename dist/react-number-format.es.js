@@ -181,8 +181,8 @@ function noop() {}
 function returnTrue() {
   return true;
 }
-function charIsNumber(char) {
-  return !!(char || '').match(/\d/);
+function charIsNumber(_char) {
+  return !!(_char || '').match(/\d/);
 }
 function escapeRegExp(str) {
   return str.replace(/[-[\]/{}()*+?.\\^$|]/g, "\\$&");
@@ -421,11 +421,11 @@ function (_React$Component) {
       selectionStart: 0,
       selectionEnd: 0
     };
-    _this.onChange = _this.onChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    _this.onKeyDown = _this.onKeyDown.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    _this.onMouseUp = _this.onMouseUp.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    _this.onFocus = _this.onFocus.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    _this.onBlur = _this.onBlur.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.onChange = _this.onChange.bind(_assertThisInitialized(_this));
+    _this.onKeyDown = _this.onKeyDown.bind(_assertThisInitialized(_this));
+    _this.onMouseUp = _this.onMouseUp.bind(_assertThisInitialized(_this));
+    _this.onFocus = _this.onFocus.bind(_assertThisInitialized(_this));
+    _this.onBlur = _this.onBlur.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1298,7 +1298,9 @@ function (_React$Component) {
         }), value);
       } else if (customInput) {
         var CustomInput = customInput;
-        return React.createElement(CustomInput, inputProps);
+        return React.createElement(CustomInput, _extends({}, inputProps, {
+          ref: getInputRef
+        }));
       }
 
       return React.createElement("input", _extends({}, inputProps, {
