@@ -1,5 +1,5 @@
 import * as React from "react";
-import { default as NumberFormat } from "react-number-format";
+import NumberFormat from "./number_format";
 
 <NumberFormat value="" />;
 <NumberFormat type="tel" />;
