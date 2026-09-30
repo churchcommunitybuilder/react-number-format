@@ -10,10 +10,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/churchcommunitybuilder/react-number-format"
-  },
+  "repository": "github:churchcommunitybuilder/react-number-format",
   "keywords": [
     "react-component",
     "react",
